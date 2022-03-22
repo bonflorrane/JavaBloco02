@@ -48,6 +48,8 @@ select * from tb_pizza;
 SELECT * FROM tb_categoria WHERE preco>45;
 
 SELECT * FROM tb_categoria WHERE preco>=29 and preco<=60;
+
+SELECT * FROM tb_pizza WHERE categoria_id LIKE 1;
 /* Faça um um select com Inner join entre  tabela categoria e pizza.*/
 SELECT * FROM tb_categoria INNER JOIN tb_pizza ON tb_categoria.id = tb_pizza.id;
 
