@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Lorrane\Documents\Generation Brasil\Bloco II\SpringTools\helloWordAula"/>
 			<item value="C:\Users\Lorrane\Downloads\helloWordAula"/>
 		</list>
 		<list key="projectNameTemplate">

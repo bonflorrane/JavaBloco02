@@ -33,3 +33,4 @@
 2022-03-23 10:04:16,908 [Worker-18: Launching HelloWordAulaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-03-23 10:04:16,908 [Worker-18: Launching HelloWordAulaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-03-23 10:04:16,909 [Worker-18: Launching HelloWordAulaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Lorrane\Downloads\helloWordAula\src\test\resources
+2022-03-23 15:30:38,196 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
