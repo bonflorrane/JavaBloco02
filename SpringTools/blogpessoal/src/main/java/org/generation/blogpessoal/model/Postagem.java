@@ -6,11 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity //que tudo que colocar aqui irá virar uma tabela
 @Table (name="tb_postagens") // serve para colocar o nome da tabela, = create table
@@ -29,6 +32,12 @@ public class Postagem {
 	
 	@UpdateTimestamp // formata a data no pradrão do note
 	private LocalDate data; // pega a data no estilo americano
+	
+	@ManyToOne //cria tipo de relacionamento e cria a foreing key
+	@JsonIgnoreProperties("postagem")//para não criar recursividade
+	private Tema tema;
+
+	
 
 	// sem os get e set não conseguimos acessar a tabela
 	public Long getId() {
@@ -61,6 +70,15 @@ public class Postagem {
 
 	public void setData(LocalDate data) {
 		this.data = data;
+	}
+	
+	
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
 	}
 	
 	

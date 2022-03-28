@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController // permite a utilização dos verbos  e métodos http
 @RequestMapping("/postagens") //onde escreve os endpoints
-@CrossOrigin("*")//esta classe aceita requisições de qq origem(diferentes portas no computador que o front-end pode vir
+@CrossOrigin("*")//esta classe aceita requisições de qq origem(diferentes portas no computador que o front-end pode vir. Independente da origem aceita a requisição
 public class PostagemController {
 	
 	@Autowired //É a partir desta transferência de responsabilidade que o repository vai ser acessado a partir do controller. Transfere a responsabilidade do controller para o repository
