@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Postagem {
 
 	@Id // indica que o que vir dentro aqui será uma chave primária
-	@GeneratedValue(strategy=GenerationType.IDENTITY) // responsável pelo auto_incrmento
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //A estratégia de incremento é dada para o banco de dados ao usar Identity/ responsável pelo auto_incrmento
 	private Long id;
 	
 	@NotNull
@@ -37,6 +37,9 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")//para não criar recursividade
 	private Tema tema;
 
+	@ManyToOne //cria tipo de relacionamento e cria a foreing key
+	@JsonIgnoreProperties("postagem")//para não criar recursividade
+	private Usuario usuario;
 	
 
 	// sem os get e set não conseguimos acessar a tabela
@@ -81,5 +84,12 @@ public class Postagem {
 		this.tema = tema;
 	}
 	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
 }

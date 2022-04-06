@@ -57,7 +57,7 @@ return ResponseEntity.ok(repository.findAll());
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 		}
-}
+}  
 	
 	
 	
