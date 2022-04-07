@@ -32,7 +32,7 @@ public class Usuario {
 	
 	private String foto;
 	
-	@OneToMany(mappedBy="usuario", cascade =CascadeType.REMOVE)
+	@OneToMany(mappedBy="usuario", cascade =CascadeType.REMOVE)//um usuário para várias postagens. Remove = quando um usuário é retirado, suas postagens também são.
 	@JsonIgnoreProperties("usuario")// quando encontrar usuario, não precisa fazer mais gets evitando recursividade
     private List<Postagem>postagens;
 	

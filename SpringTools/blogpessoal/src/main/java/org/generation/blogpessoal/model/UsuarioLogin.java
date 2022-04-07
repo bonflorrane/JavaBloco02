@@ -14,7 +14,7 @@ public class UsuarioLogin {
 	
 	private String foto;
 	
-	private String token; // gerado pelo basice o spring security, gerado pela biblioteca
+	private String token; // gerado pelo basic64 o spring security, gerado pela biblioteca
 
 	public Long getId() {
 		return id;

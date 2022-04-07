@@ -11,15 +11,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service 
-public class UserDetailsServiceImlp implements UserDetailsService{
+public class UserDetailsServiceImpl implements UserDetailsService{
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername (String userName) throws UsernameNotFoundException{
+	public UserDetails loadUserByUsername (String userName) throws UsernameNotFoundException{// busca pelo usuário no banco de dados
 		Optional<Usuario>usuario = usuarioRepository.findByUsuario(userName);
 		usuario.orElseThrow(()-> new UsernameNotFoundException(userName + "Este usuário não foi encontrado"));
-		return usuario.map(UserDetailsImpl::new).get();
+		return usuario.map(UserDetailsImpl::new).get();//map é usado pois pode vir uma única resposta ou um array de usuários. :: atribui no UserDetailsImpl (o userName e password)
 	}
 	
 	
