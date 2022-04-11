@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name ="tb_usuarios")
 public class Usuario {
@@ -24,7 +26,9 @@ public class Usuario {
 	
 	private String nome;
 	
-	@Email
+	@Schema// emite um lembrete no Swagger de que deve ser digitado um email no valor do atributo
+	@NotNull
+	@Email // o atributo deve ser um email válido
 	private String usuario; // em usuário será adicionado um email garantido pela palavra reservada (annotation)
 	
 	@NotNull
@@ -35,6 +39,20 @@ public class Usuario {
 	@OneToMany(mappedBy="usuario", cascade =CascadeType.REMOVE)//um usuário para várias postagens. Remove = quando um usuário é retirado, suas postagens também são.
 	@JsonIgnoreProperties("usuario")// quando encontrar usuario, não precisa fazer mais gets evitando recursividade
     private List<Postagem>postagens;
+	
+	//Metodos construtores para testes
+	//Importante seguir a mesma ordem das declarações dos atributos de usuario acima
+	// Construtor cheio
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome= nome;
+		this.usuario=usuario;
+		this.senha=senha;
+		this.foto=foto;
+	}
+	
+	//Construtor vazio
+	public Usuario() {}//dar liberdade para testar os atributos que quiser
 	
 	public Long getId() {
 		return id;

@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 @RestController
 @RequestMapping("/usuarios")
 @CrossOrigin(origins="*")
@@ -29,7 +31,7 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
-	
+
 	@GetMapping("/all")
 	public ResponseEntity<List<Usuario>>getAll(){
 		return ResponseEntity.ok(usuarioRepository.findAll());
